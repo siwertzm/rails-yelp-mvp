@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+ .text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ }
+
+ .rev{
+  border-radius: 5px;
+  width: 80%;
+  margin: 30px auto 0 auto;
+ }
+
+ .rev2{
+  border-radius: 5px;
+  width: 80%;
+  margin: 0% auto;
+ }
+
+ .com{
+  border-radius: 5px;
+  width: 90%;
+  margin: 0 auto;
+ }

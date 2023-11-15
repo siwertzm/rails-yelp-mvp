@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :image, as: :file %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
+    <div class="text-center">
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

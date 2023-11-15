@@ -1,0 +1,26 @@
+<div class="d-flex flex-wrap justify-content-center">
+  <% @restaurants.each do |resto| %>
+    <div class="card m-3" style="width: 18rem;">
+      <img src="<%= resto.image %>" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title"><%= resto.name %></h3>
+        <div class="d-flex justify-content-between">
+          <p class="card-text"><%= resto.category %></p>
+          <% if resto.reviews.size != 0 %>
+            <p class="card-text">
+              <% moy = [] %>
+              <% resto.reviews.each { |rat| moy.push(rat.rating)} %>
+              <%= moy.sum / moy.size %>/5
+            </p>
+          <% else %>
+          <% end %>
+        </div>
+        <hr>
+        <p class="card-text text"><%= resto.description %></p>
+        <div class="text-center">
+          <%= link_to "See more".html_safe, restaurant_path(resto), class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
